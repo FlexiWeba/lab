@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+dotfiles_dir="$HOME/dotfiles"
+file_count=$(find "$dotfiles_dir" -maxdepth 1 -type f | wc -l)
+
+echo "User: $USER"
+echo "Home: $HOME"
+echo "Dotfiles directory: $dotfiles_dir"
+echo "Number of files in dotfiles: $file_count"
