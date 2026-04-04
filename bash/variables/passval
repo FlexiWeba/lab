@@ -1,0 +1,53 @@
+#!/bin/bash
+
+password="superpasswords"
+echo "Length: ${#password}"
+# 10
+
+# Validation
+if [[ ${#password} -lt 8 ]]; then
+    echo "Password too short"
+    exit 1
+fi
+
+filepath="/home/user/document.txt"
+echo "${filepath#*/}"
+# home/user/document.txt (shortest match)
+echo "${filepath##*/}"
+# document.txt (longest match - this is basename!)
+
+filepath="/home/user/report.tar.gz"
+
+filename="${filepath##*/}"
+# report.tar.gz (basename)
+directory="${filepath%/*}"
+# /home/user (dirname)
+extension="${filename##*.}"
+# gz
+basename="${filename%%.*}"
+# report
+
+text="hello world world"
+
+# Replace first match
+echo "${text/world/bash}"
+# hello bash world
+
+# Replace all matches
+echo "${text//world/bash}"
+# hello bash bash
+
+# Delete (replace with nothing)
+echo "${text// /}"
+# helloworldworld
+
+name="hello world"
+echo "${name^}"
+# Hello world (capitalize first)
+echo "${name^^}"
+# HELLO WORLD (uppercase all)
+
+name="HELLO WORLD"
+echo "${name,,}"
+# hello world (lowercase all)
+
