@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [[ -z "$1" || "$1" == "--help" ]]; then
+    echo "Usage: $0 <Use apple kiwi or banana>"
+fi
+
+fruit="$1"
+echo "Argument:$fruit"
+
+if [[ $fruit != "apple" && "$fruit" != "banana" && "$fruit" != "kiwi" ]]; then
+	echo "not the right fruit"
+        exit 1
+fi
+
+case $fruit in
+    apple)
+        echo "red"
+        ;;
+    banana)
+        echo "yellow"
+        ;;
+    kiwi)
+	echo "green"
+	;;
+    *)
+        echo "Usage: $0 {apple|banana|kiwi}"
+        exit 1
+        ;;
+esac
