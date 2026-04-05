@@ -1,0 +1,3 @@
+# Parameter expansion (built-in, faster)
+filename="document.txt" 
+echo "${filename%.txt}"

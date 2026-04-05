@@ -1,0 +1,6 @@
+#!/bin/bash
+# Set the variable if unset or empty
+name=""
+echo "${name:=UserFlexi}"
+echo "$name"
+# Now contains "User"
