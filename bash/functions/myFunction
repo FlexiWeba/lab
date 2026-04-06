@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+#Example 1
+my_function() {
+    local name="Changed"
+    echo "Inside: $name"
+}
+
+name="Original"
+my_function
+echo "Outside: $name"
+# Still "Original"
+
+# Example 2
+is_even() {
+    local num="$1"
+    (( num % 2 == 0 ))
+}
+# Call function with parameter "4"
+if is_even 4; then
+    echo "4 is even"
+fi
+

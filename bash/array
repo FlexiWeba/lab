@@ -1,0 +1,39 @@
+#!/bin/bash 
+
+fruits=("apple" "banana" "orange")
+
+# Single element (zero-indexed)
+echo "${fruits[0]}"
+# apple
+
+# All elements
+echo "${fruits[@]}"
+# apple banana orange
+
+# Length - this is Parameter expansion
+echo "${#fruits[@]}"
+# 3
+
+# Add element
+fruits+=("grape")
+
+# Looping over arrays
+for fruit in "${fruits[@]}"; do
+    echo "I like $fruit"
+done
+
+#use arrays and functions
+print_numbered() {
+    local items=("$@")
+    local i=1
+    for item in "${items[@]}"; do
+        echo "$i. $item"
+        ((i++))
+    done
+}
+
+tasks=("Buy milk" "Walk dog" "Write code")
+print_numbered "${tasks[@]}"
+# 1. Buy milk
+# 2. Walk dog
+# 3. Write code
