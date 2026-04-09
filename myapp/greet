@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "Welcome-Message from my Container"
